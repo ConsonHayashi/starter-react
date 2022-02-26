@@ -5,6 +5,19 @@
   font-weight: 400;
   src: url(./material.woff2) format('woff2');
 }
+@font-face {
+  font-family: 'MaShanZheng';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./MaShanZheng-Regular.ttf) format('woff2');
+}
+
+@font-face {
+  font-family: 'NotoSerifSC';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./NotoSerifSC-Regular.otf) format('woff2');
+}
 
 .material-icons {
   font-family: 'Material Icons';
@@ -20,4 +33,8 @@
   direction: ltr;
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+}
+
+* {
+  font-size: 16px;
 }
