@@ -7,8 +7,8 @@ import {
   useSelector,
 } from 'react-redux';
 
-import { Center } from '../../components/layout/center';
-import { Page } from '../../components/layout/pages';
+import { Center } from '../../components/contriant/center';
+import { Page } from '../../components/contriant/pages';
 import {
   decrement,
   increment,

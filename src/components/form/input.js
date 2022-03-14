@@ -25,7 +25,6 @@ export function Input (props) {
         <span className="omrs-input-label">{getLabel(props.label)}</span>
         <span className="omrs-input-helper">{getHelper(props.value, props.helperText)}</span>
         <span width="24" height="24" viewBox="0 0 24 24" className='svg' >{props.children}</span>
-
       </label>
     </div>
   )

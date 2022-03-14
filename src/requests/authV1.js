@@ -5,28 +5,27 @@ import {
 } from './options';
 import { getAuth } from './static';
 
-export const login = (user, window) => {
+export const login = (user) => {
   const url = `${getAuth()}/v1/any/auth/signin`;
-  return fetch(url, getPostOption(user, window));
+  return fetch(url, getPostOption(user));
 }
 
-export const logup = (user, window) => {
+export const logup = (user) => {
   const url = `${getAuth()}/v1/any/auth/signup`;
-  return fetch(url, getPostOption(user, window));
+  return fetch(url, getPostOption(user));
 }
 
-export const resetPass = (user, window) => {
-
+export const resetPass = (user) => {
   const url = `${getAuth()}/v1/any/auth/pass`;
-  return fetch(url, getPutOption(user, window));
+  return fetch(url, getPutOption(user));
 }
 
-export const getVerfication = (user, window) => {
+export const getVerfication = (user) => {
   const url = `${getAuth()}/v1/any/auth/code?email=${user.email}`;
-  return fetch(url, getGetOption(window));
+  return fetch(url, getGetOption());
 }
 
-export const getUsername = (user, window) => {
+export const getUsername = (user) => {
   const url = `${getAuth()}/v1/any/auth/name?email=${user.email}&code=${user.code}`;
-  return fetch(url, getGetOption(window));
+  return fetch(url, getGetOption());
 }

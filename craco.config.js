@@ -1,3 +1,5 @@
+
+
 module.exports = {
   style: {
     postcss: {
@@ -6,5 +8,5 @@ module.exports = {
         require('autoprefixer'),
       ],
     },
-  },
+  }
 }

@@ -1,12 +1,12 @@
-import { Center } from '../../components/layout/center';
-import { Page } from '../../components/layout/pages';
+import { Center } from '../../components/contriant/center';
+import { Page } from '../../components/contriant/pages';
 
-export function TestIcon () {
+export function TestIcon() {
   return (
     <Page>
       <Center>
-        <span class="material-icons">account_circle</span>
-        <i class="fa fa-apple-pay"></i>
+        <span className="material-icons">account_circle</span>
+        <i className="fa fa-apple-pay"></i>
       </Center>
     </Page>
   )

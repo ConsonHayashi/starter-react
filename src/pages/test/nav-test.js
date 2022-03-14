@@ -4,8 +4,8 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { Center } from '../../components/layout/center';
-import { Page } from '../../components/layout/pages';
+import { Center } from '../../components/contriant/center';
+import { Page } from '../../components/contriant/pages';
 
 export function NavTest () {
   return (
@@ -16,6 +16,8 @@ export function NavTest () {
           <p>You can do this, I believe in you.</p>
         </main>
         <nav>
+          <Link to="/home/main">Test main Page</Link>
+          <br />
           <Link to="/test/animejs">Test anime.js Page</Link>
           <br />
           <Link to="/test/chartjs">Test chart.js Page</Link>
@@ -33,6 +35,8 @@ export function NavTest () {
           <Link to="/auth/password">Test forget password Page</Link>
           <br />
           <Link to="/auth/name">Test forget name Page</Link>
+          <br />
+          <Link to="/input/editor">Test editor</Link>
         </nav>
       </Center>
     </Page>

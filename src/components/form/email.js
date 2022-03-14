@@ -38,7 +38,7 @@ export function Email (props) {
     setCounter(60);
     interval = setInterval(ticks, 1000)
     getVerfication({ email: props.value }, window).then(res => {
-      if (res.status != 200) {
+      if (res.status !== 200) {
         res.json().then(e => {
           if (e.content) { alert.error(e.content); }
           if (e.error) { alert.error(e.error) }

@@ -2,7 +2,7 @@
 
 function getFlex (flexCss) {
   if (flexCss) {
-    return `flex flex-row w-full ${flexCss}`;
+    return `flex flex-row ${flexCss}`;
   } else {
     return `flex flex-row justify-center items-center w-full h-full`;
   }

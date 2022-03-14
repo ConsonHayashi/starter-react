@@ -15,12 +15,12 @@ import {
   Routes,
 } from 'react-router-dom';
 
-import { Alert } from './components/tip/alert';
 import { LoginPage } from './pages/auth/login';
 import { LogupPage } from './pages/auth/logup';
 import { NamePage } from './pages/auth/name';
 import { PassPage } from './pages/auth/pass';
 import { MainPage } from './pages/home/main';
+import { Editor } from './pages/input/editor';
 import { NavTest } from './pages/test/nav-test';
 import { TestAnijs } from './pages/test/test-anime';
 import { TestChartjs } from './pages/test/test-chart';
@@ -28,15 +28,16 @@ import { TestIcon } from './pages/test/test-icon';
 import { TestRedux } from './pages/test/test-redux';
 import { TestTailWind } from './pages/test/test-tailwind';
 import store from './store';
+import { Alert } from './themes/adminto/alert';
 
 // optional configuration
 const alertOptions = {
   // you can also just use 'bottom center'
-  position: positions.BOTTOM_CENTER,
+  position: positions.TOP_RIGHT,
   timeout: 5000,
   offset: '30px',
   // you can also just use 'scale'
-  transition: transitions.SCALE
+  transition: transitions.SCALE,
 }
 
 const rootElement = document.getElementById('root')
@@ -62,6 +63,7 @@ const getReactRoot = () => {
               <Route path="/home/version" element={<NamePage />} />
               <Route path="/home/about" element={<NamePage />} />
               <Route path="/home/user" element={<NamePage />} />
+              <Route path="/input/editor" element={<Editor />} />
             </Routes>
           </HashRouter>
         </Provider>
@@ -70,9 +72,4 @@ const getReactRoot = () => {
   )
 }
 
-ReactDOM.render(
-  getReactRoot(),
-  rootElement
-);
-
-
+ReactDOM.render(getReactRoot(), rootElement)

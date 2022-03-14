@@ -1,15 +1,19 @@
 
-const saltSerect = "fli";
-const DES_PROPERTY = 'password';
 
-export const getDESCtypt = (password) => {
-  return saltSerect + window.btoa(password);
+
+
+export const secretYourInfo = (requestBody) => {
+  const DES_PROPERTY = 'password';
+  const saltSerect = "fli";
+  if (requestBody.hasOwnProperty(DES_PROPERTY)) {
+    requestBody[DES_PROPERTY] = saltSerect + window.btoa(requestBody[DES_PROPERTY]);
+  }
 }
 
-export const getJsonHeader = (window) => {
+export const getJsonHeader = () => {
   const jsonHeader = new Headers();
   jsonHeader.append('content-type', 'application/json');
-  const jwt = window.localStorage.getItem("jwt");
+  const jwt = window.localStorage.getItem("jwt")
   if (jwt) {
     jsonHeader.append('Authorization', jwt);
   }
@@ -17,27 +21,20 @@ export const getJsonHeader = (window) => {
 }
 
 
-export const getPostOption = (obj, window) => {
+export const getPostOption = (obj) => {
   const newObj = { ...obj }
-  if (newObj.hasOwnProperty(DES_PROPERTY)) {
-    newObj[DES_PROPERTY] = getDESCtypt(newObj[DES_PROPERTY]);
-  }
+  secretYourInfo(newObj)
   const objStr = JSON.stringify(newObj)
-  const option = { method: "POST", body: objStr, mode: "cors", headers: getJsonHeader(window) }
-  return option;
+  return { method: "POST", body: objStr, mode: "cors", headers: getJsonHeader() }
 }
 
-export const getPutOption = (obj, window) => {
+export const getPutOption = (obj) => {
   const newObj = { ...obj }
-  if (newObj.hasOwnProperty(DES_PROPERTY)) {
-    newObj[DES_PROPERTY] = getDESCtypt(newObj[DES_PROPERTY]);
-  }
+  secretYourInfo(newObj)
   const objStr = JSON.stringify(newObj)
-  const option = { method: "PUT", body: objStr, mode: "cors", headers: getJsonHeader(window) }
-  return option;
+  return { method: "PUT", body: objStr, mode: "cors", headers: getJsonHeader() }
 }
 
-export const getGetOption = (window) => {
-  const option = { method: "GET", mode: "cors", headers: getJsonHeader(window) }
-  return option;
+export const getGetOption = () => {
+  return { method: "GET", mode: "cors", headers: getJsonHeader() }
 }
